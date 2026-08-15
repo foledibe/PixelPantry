@@ -1,0 +1,47 @@
+[
+  {
+    "name": "5-Minute Mug Cake",
+    "time": "5 min",
+    "servings": "1",
+    "ingredients": [
+      "4 tbsp flour",
+      "4 tbsp sugar",
+      "2 tbsp cocoa powder",
+      "1 egg",
+      "3 tbsp milk",
+      "3 tbsp oil"
+    ],
+    "steps": [
+      "Mix all ingredients in a mug.",
+      "Microwave for 90 seconds.",
+      "Let cool slightly, then eat."
+    ]
+  },
+  {
+    "name": "Loaded Quesadilla",
+    "time": "10 min",
+    "servings": "2",
+    "ingredients": [
+      "2 tortillas",
+      "1 cup shredded cheese",
+      "1/2 cup beans",
+      "salsa"
+    ],
+    "steps": [
+      "Layer cheese and beans on a tortilla.",
+      "Top with second tortilla.",
+      "Cook in a pan 2-3 min per side until golden."
+    ]
+  },
+  {
+    "name": "Fruity Yogurt Bowl",
+    "time": "5 min",
+    "servings": "1",
+    "ingredients": ["1 cup yogurt", "1/2 cup berries", "granola", "honey"],
+    "steps": [
+      "Add yogurt to a bowl.",
+      "Top with berries and granola.",
+      "Drizzle honey on top."
+    ]
+  }
+]
