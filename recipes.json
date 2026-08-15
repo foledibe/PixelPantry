@@ -1,8 +1,10 @@
 [
   {
     "name": "5-Minute Mug Cake",
+    "emoji": "🍫",
     "time": "5 min",
     "servings": "1",
+    "difficulty": "Easy",
     "ingredients": [
       "4 tbsp flour",
       "4 tbsp sugar",
@@ -19,8 +21,10 @@
   },
   {
     "name": "Loaded Quesadilla",
+    "emoji": "🌮",
     "time": "10 min",
     "servings": "2",
+    "difficulty": "Easy",
     "ingredients": [
       "2 tortillas",
       "1 cup shredded cheese",
@@ -35,13 +39,35 @@
   },
   {
     "name": "Fruity Yogurt Bowl",
+    "emoji": "🍓",
     "time": "5 min",
     "servings": "1",
+    "difficulty": "Easy",
     "ingredients": ["1 cup yogurt", "1/2 cup berries", "granola", "honey"],
     "steps": [
       "Add yogurt to a bowl.",
       "Top with berries and granola.",
       "Drizzle honey on top."
+    ]
+  },
+  {
+    "name": "Homemade Fried Rice",
+    "emoji": "🍚",
+    "time": "20 min",
+    "servings": "3",
+    "difficulty": "Medium",
+    "ingredients": [
+      "2 cups cooked rice, day-old is best",
+      "2 eggs",
+      "1 cup mixed veggies",
+      "2 tbsp soy sauce",
+      "1 tbsp sesame oil"
+    ],
+    "steps": [
+      "Saute veggies for 3-4 min.",
+      "Push veggies aside, scramble eggs in the same pan.",
+      "Add rice, soy sauce, and sesame oil, stir-fry 5 min.",
+      "Mix everything together and serve."
     ]
   }
 ]

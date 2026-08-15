@@ -4,47 +4,131 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PixelPantry 🍳</title>
+    <meta
+      name="description"
+      content="A little digital cookbook of my favorite recipes, built with HTML, CSS, and Python."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <h1>🍳 PixelPantry</h1>
-      <p>A little digital cookbook of my favorite recipes.</p>
-      <button id="surprise-btn">🎲 Surprise Me</button>
+      <p class="eyebrow">a very small, very personal cookbook</p>
+      <h1>PixelPantry<span class="dot">.</span></h1>
+      <svg class="underline" viewBox="0 0 300 20" preserveAspectRatio="none">
+        <path
+          d="M2 12 C 60 4, 120 18, 180 8 S 260 4, 298 10"
+          fill="none"
+          stroke="var(--accent-red)"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+      </svg>
+
+      <div class="search-wrap">
+        <div class="tape"></div>
+        <input type="text" id="search-bar" placeholder="search the box..." />
+      </div>
+
+      <button id="surprise-btn">
+        <span class="dial"></span>
+        surprise me
+      </button>
     </header>
 
-    <main>
-      <div id="recipe-list">
-            <div class="recipe-card" data-index="0">
-      <h3>5-Minute Mug Cake</h3>
-      <p class="meta">⏱ 5 min · 🍽 serves 1</p>
-      <strong>Ingredients</strong>
-      <ul><li>4 tbsp flour</li><li>4 tbsp sugar</li><li>2 tbsp cocoa powder</li><li>1 egg</li><li>3 tbsp milk</li><li>3 tbsp oil</li></ul>
-      <strong>Steps</strong>
-      <ol><li>Mix all ingredients in a mug.</li><li>Microwave for 90 seconds.</li><li>Let cool slightly, then eat.</li></ol>
+    <main id="recipe-list">
+          <div class="index-card" style="--rot: -3deg;" data-name="5-minute mug cake">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <svg class="paperclip" viewBox="0 0 24 44" fill="none">
+  <path d="M6 8 C6 4 10 2 14 4 C18 6 18 12 14 15 L8 22 C6 24 6 27 8 29 C10 31 13 31 15 29 L20 24"
+        stroke="#8a8a8a" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
+          <span class="stamp easy">Easy</span>
+          <div class="card-emoji">🍫</div>
+          <h3>5-Minute Mug Cake</h3>
+          <p class="meta">5 min &middot; serves 1</p>
+          <p class="flip-hint">tap to see recipe &rarr;</p>
+        </div>
+        <div class="card-face card-back">
+          <h4>Ingredients</h4>
+          <ul><li>4 tbsp flour</li><li>4 tbsp sugar</li><li>2 tbsp cocoa powder</li><li>1 egg</li><li>3 tbsp milk</li><li>3 tbsp oil</li></ul>
+          <h4>Steps</h4>
+          <ol><li>Mix all ingredients in a mug.</li><li>Microwave for 90 seconds.</li><li>Let cool slightly, then eat.</li></ol>
+          <p class="flip-hint">&larr; tap to flip back</p>
+        </div>
+      </div>
     </div>
-    <div class="recipe-card" data-index="1">
-      <h3>Loaded Quesadilla</h3>
-      <p class="meta">⏱ 10 min · 🍽 serves 2</p>
-      <strong>Ingredients</strong>
-      <ul><li>2 tortillas</li><li>1 cup shredded cheese</li><li>1/2 cup beans</li><li>salsa</li></ul>
-      <strong>Steps</strong>
-      <ol><li>Layer cheese and beans on a tortilla.</li><li>Top with second tortilla.</li><li>Cook in a pan 2-3 min per side until golden.</li></ol>
+    <div class="index-card" style="--rot: 2deg;" data-name="loaded quesadilla">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          
+          <span class="stamp easy">Easy</span>
+          <div class="card-emoji">🌮</div>
+          <h3>Loaded Quesadilla</h3>
+          <p class="meta">10 min &middot; serves 2</p>
+          <p class="flip-hint">tap to see recipe &rarr;</p>
+        </div>
+        <div class="card-face card-back">
+          <h4>Ingredients</h4>
+          <ul><li>2 tortillas</li><li>1 cup shredded cheese</li><li>1/2 cup beans</li><li>salsa</li></ul>
+          <h4>Steps</h4>
+          <ol><li>Layer cheese and beans on a tortilla.</li><li>Top with second tortilla.</li><li>Cook in a pan 2-3 min per side until golden.</li></ol>
+          <p class="flip-hint">&larr; tap to flip back</p>
+        </div>
+      </div>
     </div>
-    <div class="recipe-card" data-index="2">
-      <h3>Fruity Yogurt Bowl</h3>
-      <p class="meta">⏱ 5 min · 🍽 serves 1</p>
-      <strong>Ingredients</strong>
-      <ul><li>1 cup yogurt</li><li>1/2 cup berries</li><li>granola</li><li>honey</li></ul>
-      <strong>Steps</strong>
-      <ol><li>Add yogurt to a bowl.</li><li>Top with berries and granola.</li><li>Drizzle honey on top.</li></ol>
+    <div class="index-card" style="--rot: -2deg;" data-name="fruity yogurt bowl">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          
+          <span class="stamp easy">Easy</span>
+          <div class="card-emoji">🍓</div>
+          <h3>Fruity Yogurt Bowl</h3>
+          <p class="meta">5 min &middot; serves 1</p>
+          <p class="flip-hint">tap to see recipe &rarr;</p>
+        </div>
+        <div class="card-face card-back">
+          <h4>Ingredients</h4>
+          <ul><li>1 cup yogurt</li><li>1/2 cup berries</li><li>granola</li><li>honey</li></ul>
+          <h4>Steps</h4>
+          <ol><li>Add yogurt to a bowl.</li><li>Top with berries and granola.</li><li>Drizzle honey on top.</li></ol>
+          <p class="flip-hint">&larr; tap to flip back</p>
+        </div>
+      </div>
+    </div>
+    <div class="index-card" style="--rot: 3deg;" data-name="homemade fried rice">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <svg class="paperclip" viewBox="0 0 24 44" fill="none">
+  <path d="M6 8 C6 4 10 2 14 4 C18 6 18 12 14 15 L8 22 C6 24 6 27 8 29 C10 31 13 31 15 29 L20 24"
+        stroke="#8a8a8a" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
+          <span class="stamp medium">Medium</span>
+          <div class="card-emoji">🍚</div>
+          <h3>Homemade Fried Rice</h3>
+          <p class="meta">20 min &middot; serves 3</p>
+          <p class="flip-hint">tap to see recipe &rarr;</p>
+        </div>
+        <div class="card-face card-back">
+          <h4>Ingredients</h4>
+          <ul><li>2 cups cooked rice, day-old is best</li><li>2 eggs</li><li>1 cup mixed veggies</li><li>2 tbsp soy sauce</li><li>1 tbsp sesame oil</li></ul>
+          <h4>Steps</h4>
+          <ol><li>Saute veggies for 3-4 min.</li><li>Push veggies aside, scramble eggs in the same pan.</li><li>Add rice, soy sauce, and sesame oil, stir-fry 5 min.</li><li>Mix everything together and serve.</li></ol>
+          <p class="flip-hint">&larr; tap to flip back</p>
+        </div>
+      </div>
     </div>
 
-      </div>
     </main>
 
     <footer>
-      <p>Built with HTML, CSS, Python, and hosted on AWS.</p>
+      <p>hand-built with HTML, CSS &amp; Python · hosted on AWS · est. 2026</p>
     </footer>
 
     <script src="app.js"></script>

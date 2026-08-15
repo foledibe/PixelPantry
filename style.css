@@ -1,9 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap");
+
 :root {
-  --bg: #fdf6ec;
-  --text: #3e2f22;
-  --accent: #d97b4f;
-  --card: #ffffff;
-  --shadow: rgba(0, 0, 0, 0.08);
+  --paper: #ede1c9;
+  --paper-card: #fbf4e4;
+  --ink: #2c2419;
+  --accent-red: #bc4530;
+  --accent-mustard: #cf9a3e;
+  --accent-sage: #6f7f52;
+  --shadow: rgba(44, 36, 25, 0.25);
 }
 
 * {
@@ -13,77 +17,326 @@
 }
 
 body {
-  font-family: "Georgia", serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: "Inter", sans-serif;
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  color: var(--ink);
   line-height: 1.6;
 }
 
 header {
   text-align: center;
-  padding: 3rem 1.5rem 2rem;
+  padding: 4rem 1.5rem 2.5rem;
+  position: relative;
+}
+
+.eyebrow {
+  font-family: "Caveat", cursive;
+  font-size: 1.3rem;
+  color: var(--accent-red);
+  transform: rotate(-2deg);
+  display: inline-block;
+  margin-bottom: 0.2rem;
 }
 
 header h1 {
-  font-size: 2.4rem;
-  color: var(--accent);
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  letter-spacing: -0.02em;
+}
+
+header h1 .dot {
+  color: var(--accent-red);
+}
+
+.underline {
+  width: 220px;
+  height: 16px;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+.search-wrap {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.tape {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 90px;
+  height: 26px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(207, 154, 62, 0.55),
+    rgba(207, 154, 62, 0.55) 6px,
+    rgba(207, 154, 62, 0.35) 6px,
+    rgba(207, 154, 62, 0.35) 12px
+  );
+  opacity: 0.85;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+#search-bar {
+  position: relative;
+  padding: 0.7rem 1.2rem;
+  width: min(85vw, 280px);
+  border: none;
+  border-bottom: 2px dashed #b8a578;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--ink);
+  outline: none;
+}
+
+#search-bar::placeholder {
+  color: #9c8a63;
 }
 
 #surprise-btn {
-  margin-top: 1rem;
-  padding: 0.6rem 1.4rem;
-  font-size: 1rem;
-  background: var(--accent);
-  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.8rem auto 0;
+  padding: 0.65rem 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  background: var(--ink);
+  color: var(--paper-card);
   border: none;
   border-radius: 999px;
   cursor: pointer;
-  transition: transform 0.15s ease;
+  transition: transform 0.2s ease;
 }
 
 #surprise-btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px) rotate(-1deg);
+}
+#surprise-btn:active {
+  transform: scale(0.96);
+}
+
+.dial {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-mustard);
+  border-top-color: transparent;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+#surprise-btn:hover .dial {
+  transform: rotate(180deg);
 }
 
 main {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 1rem 1.5rem 3rem;
+  padding: 2.5rem 1.5rem 4rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 2.2rem 1.6rem;
 }
 
-.recipe-card {
-  background: var(--card);
-  border-radius: 12px;
-  padding: 1.2rem;
-  box-shadow: 0 3px 10px var(--shadow);
-  transition: transform 0.15s ease;
+.index-card {
+  perspective: 1200px;
+  animation: cardIn 0.5s ease backwards;
 }
 
-.recipe-card:hover {
-  transform: translateY(-4px);
+.index-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.index-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.index-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+.index-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+.index-card:nth-child(5) {
+  animation-delay: 0.33s;
+}
+.index-card:nth-child(6) {
+  animation-delay: 0.4s;
+}
+.index-card:nth-child(n + 7) {
+  animation-delay: 0.45s;
 }
 
-.recipe-card h3 {
-  color: var(--accent);
-  margin-bottom: 0.4rem;
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.recipe-card .meta {
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: rotate(var(--rot));
+}
+
+.index-card.flipped .card-inner {
+  transform: rotate(0deg) rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  background: var(--paper-card);
+  border-radius: 2px;
+  padding: 1.3rem 1.4rem;
+  box-shadow: 0 6px 16px var(--shadow);
+  clip-path: polygon(
+    0% 5%,
+    6% 0%,
+    12% 4%,
+    18% 1%,
+    24% 5%,
+    30% 0%,
+    36% 4%,
+    42% 1%,
+    48% 5%,
+    54% 0%,
+    60% 4%,
+    66% 1%,
+    72% 5%,
+    78% 0%,
+    84% 4%,
+    90% 1%,
+    96% 5%,
+    100% 0%,
+    100% 100%,
+    0% 100%
+  );
+  overflow-y: auto;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.stamp {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border: 1.5px dashed currentColor;
+  border-radius: 999px;
+  transform: rotate(-8deg);
+  mix-blend-mode: multiply;
+}
+
+.stamp.easy {
+  color: var(--accent-sage);
+}
+.stamp.medium {
+  color: var(--accent-mustard);
+}
+.stamp.hard {
+  color: var(--accent-red);
+}
+
+.paperclip {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  width: 22px;
+  height: 40px;
+  opacity: 0.8;
+}
+
+.card-emoji {
+  font-size: 2.4rem;
+  margin: 1.6rem 0 0.6rem;
+}
+
+.card-front h3 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-front .meta {
   font-size: 0.85rem;
-  color: #8a7a68;
-  margin-bottom: 0.6rem;
+  color: #7a6b4d;
 }
 
-.recipe-card.highlight {
-  outline: 3px solid var(--accent);
+.flip-hint {
+  margin-top: auto;
+  font-family: "Caveat", cursive;
+  font-size: 1.05rem;
+  color: var(--accent-red);
+  padding-top: 0.8rem;
+}
+
+.card-back h4 {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  color: var(--accent-red);
+  margin: 0.6rem 0 0.3rem;
+}
+
+.card-back h4:first-child {
+  margin-top: 0;
+}
+
+.card-back ul,
+.card-back ol {
+  font-size: 0.85rem;
+  padding-left: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-back li {
+  margin-bottom: 0.15rem;
 }
 
 footer {
   text-align: center;
-  padding: 2rem;
-  color: #a3937f;
-  font-size: 0.85rem;
+  padding: 2.5rem 1.5rem 3rem;
+  font-family: "Caveat", cursive;
+  font-size: 1.1rem;
+  color: #8a7a5c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-card,
+  .card-inner,
+  #surprise-btn,
+  .dial {
+    animation: none !important;
+    transition: none !important;
+  }
 }
